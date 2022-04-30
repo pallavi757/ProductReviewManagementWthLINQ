@@ -43,12 +43,16 @@ namespace ProductReviewManagement
             };
             // using foreach LINQ method
             // Query execution
-            foreach (var list in productReviewList)
-            {
-                Console.WriteLine("ProductID:" + list.ProductID + " " + "UserID: " + list.UserID
-                    + " " + "Rating: " + list.Rating + " " + "Review: " + list.Review + " " + "isLike: " + list.isLike);
-                Console.WriteLine("-------------------------------------------------------------");
-            }
+            //foreach (var list in productReviewList)
+            //{
+            //    Console.WriteLine("ProductID:" + list.ProductID + " " + "UserID: " + list.UserID
+            //        + " " + "Rating: " + list.Rating + " " + "Review: " + list.Review + " " + "isLike: " + list.isLike);
+            //    Console.WriteLine("-------------------------------------------------------------");
+            //}
+            Console.WriteLine("UC2-Retrieving Top 3 records based on rating: \n");
+            Management objManagement = new Management();
+            objManagement.TopRecords(productReviewList);
+            Console.WriteLine("\n");
         }
     }
 }
