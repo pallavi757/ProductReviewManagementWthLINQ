@@ -63,7 +63,11 @@ namespace ProductReviewManagement
             Console.WriteLine("UC6- Skipping top 5 records:\n");
            // objManagement.SkipTopFiveRecords(productReviewList);
             Console.WriteLine("UC7-Retrieving review by Product ID:\n");
-            objManagement.ProductIdAndReviewUsingMethodSyntax(productReviewList);
+            // objManagement.ProductIdAndReviewUsingMethodSyntax(productReviewList);
+            Console.WriteLine("UC8-Create Data Table:\n");
+            ProductTable obj = new ProductTable();
+            obj.CreateDataTable(productReviewList);
+            ProductTable.ShowTable();
         }
     }
 }
