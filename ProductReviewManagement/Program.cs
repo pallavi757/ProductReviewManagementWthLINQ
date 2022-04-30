@@ -49,10 +49,12 @@ namespace ProductReviewManagement
             //        + " " + "Rating: " + list.Rating + " " + "Review: " + list.Review + " " + "isLike: " + list.isLike);
             //    Console.WriteLine("-------------------------------------------------------------");
             //}
-            Console.WriteLine("UC2-Retrieving Top 3 records based on rating: \n");
+            //Console.WriteLine("UC2-Retrieving Top 3 records based on rating: \n");
             Management objManagement = new Management();
-            objManagement.TopRecords(productReviewList);
-            Console.WriteLine("\n");
+           // objManagement.TopRecords(productReviewList);
+           // Console.WriteLine("\n");
+            Console.WriteLine("UC3-Retrieving records based on specific conditions: \n");
+            objManagement.SelectedRecords(productReviewList);
         }
     }
 }

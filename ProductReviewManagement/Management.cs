@@ -9,6 +9,7 @@ namespace ProductReviewManagement
 {
      public class Management
     {
+        //UC2
         // Create a table with a schema that matches that of the query results
         public readonly DataTable dataTable = new DataTable();
         public void TopRecords(List<ProductReview> listProductReview)
@@ -23,6 +24,24 @@ namespace ProductReviewManagement
                 Console.WriteLine("ProductID:" + list.ProductID + " " + "UserID: " + list.UserID
                     + " " + "Rating: " + list.Rating + " " + "Review: " + list.Review + " " + "isLike: " + list.isLike);
                 Console.WriteLine("-------------------------------------------------------------");
+            }
+        }
+        //UC3
+        public void SelectedRecords(List<ProductReview> listProductReview)
+        {
+            //Retrieve all record from the list who’s rating are greater then 3 and productID is 1 or 4 or 9 using
+
+            var recordedData = from productReviews in listProductReview
+                               where (productReviews.ProductID == 1 || productReviews.ProductID == 4 || productReviews.ProductID == 9)
+                               && productReviews.Rating > 3
+                               select productReviews;
+            Console.WriteLine("Rating greater than 3 with product id of 1,4,or 9: ");
+            // If you need the results to be in a DataTable
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductID: " + list.ProductID + " " + "UserID: " + list.UserID
+                    + " " + "Rating: " + list.Rating + " " + "Review: " + list.Review + " " + "isLike:" + list.isLike);
+                
             }
         }
     }
