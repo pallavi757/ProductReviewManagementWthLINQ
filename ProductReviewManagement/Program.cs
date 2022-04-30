@@ -44,22 +44,24 @@ namespace ProductReviewManagement
             // using foreach LINQ method
 
             //Query execution
-            foreach (var list in productReviewList)
-            {
-                Console.WriteLine("ProductID:" + list.ProductID + " " + "UserID: " + list.UserID
-                    + " " + "Rating: " + list.Rating + " " + "Review: " + list.Review + " " + "isLike: " + list.isLike);
-                Console.WriteLine("-------------------------------------------------------------");
-            }
-            Console.WriteLine("UC2-Retrieving Top 3 records based on rating: \n");
+            //foreach (var list in productReviewList)
+            //{
+            //    Console.WriteLine("ProductID:" + list.ProductID + " " + "UserID: " + list.UserID
+            //        + " " + "Rating: " + list.Rating + " " + "Review: " + list.Review + " " + "isLike: " + list.isLike);
+            //    Console.WriteLine("-------------------------------------------------------------");
+            //}
+            //Console.WriteLine("UC2-Retrieving Top 3 records based on rating: \n");
             Management objManagement = new Management();
-            //objManagement.TopRecords(productReviewList);
-            Console.WriteLine("\n");
-            Console.WriteLine("UC3-Retrieving records based on specific conditions: \n");
-            //objManagement.SelectedRecords(productReviewList);
-            Console.WriteLine("UC4-Gives Count of reviews for each product: ");
-            //objManagement.RetrieveCountOfRecords(productReviewList);
-            Console.WriteLine("UC5-Retrieving review by Product ID: \n");
-            objManagement.RetrieveProductIDAndReview(productReviewList);
+            ////objManagement.TopRecords(productReviewList);
+            //Console.WriteLine("\n");
+            //Console.WriteLine("UC3-Retrieving records based on specific conditions: \n");
+            ////objManagement.SelectedRecords(productReviewList);
+            //Console.WriteLine("UC4-Gives Count of reviews for each product: ");
+            ////objManagement.RetrieveCountOfRecords(productReviewList);
+            //Console.WriteLine("UC5-Retrieving review by Product ID: \n");
+            //objManagement.RetrieveProductIDAndReview(productReviewList);
+            Console.WriteLine("UC6- Skipping top 5 records:");
+            objManagement.SkipTopFiveRecords(productReviewList);
         }
     }
 }

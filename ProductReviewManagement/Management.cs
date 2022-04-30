@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ProductReviewManagement
 {
-     public class Management
+    public class Management
     {
         //UC2
         // Create a table with a schema that matches that of the query results
-       // public readonly DataTable dataTable = new DataTable();
+        // public readonly DataTable dataTable = new DataTable();
 
         public void TopRecords(List<ProductReview> listProductReview)
         {
@@ -46,17 +46,17 @@ namespace ProductReviewManagement
             }
         }
         //UC4
-            public void RetrieveCountOfRecords(List<ProductReview> listProductReview)
+        public void RetrieveCountOfRecords(List<ProductReview> listProductReview)
+        {
+            // method parameter(s) => method body, or method parameter(s) => method return value.
+            var recordedData = listProductReview.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
+            Console.WriteLine("Count of records by ProductID: ");
+            foreach (var list in recordedData)
             {
-                // method parameter(s) => method body, or method parameter(s) => method return value.
-                var recordedData = listProductReview.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
-                Console.WriteLine("Count of records by ProductID: ");
-                foreach (var list in recordedData)
-                {
-                    Console.WriteLine("ID:" + list.ProductID + "----->" + "Count: " + list.Count);
+                Console.WriteLine("ID:" + list.ProductID + "----->" + "Count: " + list.Count);
 
-                }
             }
+        }
         //UC5
         public void RetrieveProductIDAndReview(List<ProductReview> listProductReview)
         {
@@ -64,11 +64,26 @@ namespace ProductReviewManagement
             Console.WriteLine("ID with Review");
             foreach (var list in recordedData)
             {
-                
+
                 Console.WriteLine("ID:" + list.ProductID + "=====>" + list.Review);
 
             }
         }
+        //UC6
+        public void SkipTopFiveRecords(List<ProductReview> listProductReview)
+        {
+
+            var recordedData = (from productReviews in listProductReview
+                                select productReviews).Skip(5);
+            Console.WriteLine("Retrieving records after skipping top 5 records:\n ");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductID: " + list.ProductID + " " + "UserID: " + list.UserID
+                    + " " + "Rating: " + list.Rating + " " + "Review: " + list.Review + " " + "isLike:" + list.isLike);
+
+            }
+        }
+
     }
 }
 
