@@ -50,18 +50,20 @@ namespace ProductReviewManagement
             //        + " " + "Rating: " + list.Rating + " " + "Review: " + list.Review + " " + "isLike: " + list.isLike);
             //    Console.WriteLine("-------------------------------------------------------------");
             //}
-            //Console.WriteLine("UC2-Retrieving Top 3 records based on rating: \n");
+            Console.WriteLine("UC2-Retrieving Top 3 records based on rating: \n");
             Management objManagement = new Management();
-            ////objManagement.TopRecords(productReviewList);
+            //objManagement.TopRecords(productReviewList);
             //Console.WriteLine("\n");
-            //Console.WriteLine("UC3-Retrieving records based on specific conditions: \n");
-            ////objManagement.SelectedRecords(productReviewList);
-            //Console.WriteLine("UC4-Gives Count of reviews for each product: ");
-            ////objManagement.RetrieveCountOfRecords(productReviewList);
-            //Console.WriteLine("UC5-Retrieving review by Product ID: \n");
+            Console.WriteLine("UC3-Retrieving records based on specific conditions: \n");
+            //objManagement.SelectedRecords(productReviewList);
+            Console.WriteLine("UC4-Gives Count of reviews for each product:\n");
+            //objManagement.RetrieveCountOfRecords(productReviewList);
+            Console.WriteLine("UC5-Retrieving review by Product ID: \n");
             //objManagement.RetrieveProductIDAndReview(productReviewList);
-            Console.WriteLine("UC6- Skipping top 5 records:");
-            objManagement.SkipTopFiveRecords(productReviewList);
+            Console.WriteLine("UC6- Skipping top 5 records:\n");
+           // objManagement.SkipTopFiveRecords(productReviewList);
+            Console.WriteLine("UC7-Retrieving review by Product ID:\n");
+            objManagement.ProductIdAndReviewUsingMethodSyntax(productReviewList);
         }
     }
 }

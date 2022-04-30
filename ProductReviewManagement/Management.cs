@@ -83,6 +83,17 @@ namespace ProductReviewManagement
 
             }
         }
+        //UC7
+        public void ProductIdAndReviewUsingMethodSyntax(List<ProductReview> listProductReview)
+        {
+            // method parameter(s) => method body, or method parameter(s) => method return value.
+            var recordedData = listProductReview.Select(x => new { x.ProductID, x.Review });
+            foreach (var list in recordedData)
+            {
+                //Output
+                Console.WriteLine("ID:" + list.ProductID + "=====>" + list.Review);
+            }
+        }
 
     }
 }
