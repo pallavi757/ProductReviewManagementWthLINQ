@@ -41,20 +41,23 @@ namespace ProductReviewManagement
                 new ProductReview(){ProductID=25,UserID=1,Rating=3,Review="nice",isLike=true}
 
             };
-            // using foreach LINQ method
-            // Query execution
-            //foreach (var list in productReviewList)
-            //{
-            //    Console.WriteLine("ProductID:" + list.ProductID + " " + "UserID: " + list.UserID
-            //        + " " + "Rating: " + list.Rating + " " + "Review: " + list.Review + " " + "isLike: " + list.isLike);
-            //    Console.WriteLine("-------------------------------------------------------------");
-            //}
-            //Console.WriteLine("UC2-Retrieving Top 3 records based on rating: \n");
+           // using foreach LINQ method
+
+            //Query execution
+            foreach (var list in productReviewList)
+            {
+                Console.WriteLine("ProductID:" + list.ProductID + " " + "UserID: " + list.UserID
+                    + " " + "Rating: " + list.Rating + " " + "Review: " + list.Review + " " + "isLike: " + list.isLike);
+                Console.WriteLine("-------------------------------------------------------------");
+            }
+            Console.WriteLine("UC2-Retrieving Top 3 records based on rating: \n");
             Management objManagement = new Management();
-           // objManagement.TopRecords(productReviewList);
-           // Console.WriteLine("\n");
+            objManagement.TopRecords(productReviewList);
+            Console.WriteLine("\n");
             Console.WriteLine("UC3-Retrieving records based on specific conditions: \n");
             objManagement.SelectedRecords(productReviewList);
+            Console.WriteLine("UC4-Gives Count of reviews for each product: ");
+            objManagement.RetrieveCountOfRecords(productReviewList);
         }
     }
 }
