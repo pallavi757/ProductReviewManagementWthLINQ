@@ -117,7 +117,7 @@ namespace ProductReviewManagement
             }
         }
         //UC11
-        public void GetProductsWithNiceReview()
+        public static void GetProductsWithNiceReview()
         {
             var avgRatings = from product in ProductTable.table.AsEnumerable()
                              where product.Field<string>("Review").ToLower() == "nice"
@@ -125,6 +125,22 @@ namespace ProductReviewManagement
             foreach (var ratings in avgRatings)
             {
                 Console.WriteLine((ProductReview)ratings);
+            }
+        }
+        //UC12
+        public  void GetRecordForAUser(List<ProductReview> products)
+        {
+            IEnumerable<ProductReview> reviewsByAUser = from product in products
+                                                        where product.UserID == 10
+                                                        select product;
+            foreach (ProductReview product in reviewsByAUser)
+            {
+                Console.WriteLine(product);
+
+
+                Console.WriteLine("ProductID:" + product.ProductID + " " + "UserID: " + product.UserID
+                    + " " + "Rating: " + product.Rating + " " + "Review: " + product.Review + " " + "isLike: " + product.isLike);
+                Console.WriteLine("-------------------------------------------------------------");
             }
         }
 

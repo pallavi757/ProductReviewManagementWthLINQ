@@ -66,14 +66,31 @@ namespace ProductReviewManagement
             // objManagement.ProductIdAndReviewUsingMethodSyntax(productReviewList);
             Console.WriteLine("UC8-Create Data Table:\n");
             ProductTable obj = new ProductTable();
-           obj.CreateDataTable(productReviewList);
+            obj.CreateDataTable(productReviewList);
           //  ProductTable.ShowTable();
             Console.WriteLine("UC9-Retrieves the records from DataTable with true isLike:\n");
            // Management.RetrieveRecordsFromDataTableWithIsLike();
             Console.WriteLine("UC10-find average rating of each product:\n");
           //  Management.GetAvgRatings();
             Console.WriteLine("UC11-Get the product with nice reviw:\n");
-            objManagement.GetProductsWithNiceReview();
+           // Management.GetProductsWithNiceReview();
+            Console.WriteLine("UC12-To get review records for particular user\n");
+            List<ProductReview> listToBeAdded = new List<ProductReview>
+            {
+                new ProductReview(){ProductID=2,UserID=10,Rating=4,Review="Good",isLike=true},
+                new ProductReview(){ProductID=3,UserID=10,Rating=5,Review="Good",isLike=true},
+                new ProductReview(){ProductID=4,UserID=10,Rating=6,Review="Good",isLike=false},
+                new ProductReview(){ProductID=5,UserID=10,Rating=2,Review="nice",isLike=true},
+                new ProductReview(){ProductID=8,UserID=10,Rating=1,Review="bas", isLike=true},
+                new ProductReview(){ProductID=8,UserID=10,Rating=1,Review="Good",isLike=false},
+                new ProductReview(){ProductID=8,UserID=10,Rating=9,Review="nice",isLike=true},
+                new ProductReview(){ProductID=2,UserID=10,Rating=10,Review="nice",isLike=true},
+                new ProductReview(){ProductID=9,UserID=10,Rating=8,Review="nice",isLike=true},
+                new ProductReview(){ProductID=11,UserID=10,Rating=3,Review="nice",isLike=true}
+            };
+            productReviewList.AddRange(listToBeAdded);
+            objManagement.GetRecordForAUser(productReviewList);
         }
     }
+
 }
