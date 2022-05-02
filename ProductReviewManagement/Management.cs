@@ -94,6 +94,17 @@ namespace ProductReviewManagement
                 Console.WriteLine("ID:" + list.ProductID + "=====>" + list.Review);
             }
         }
+        //UC9
+        public  void RetrieveRecordsFromDataTableWithIsLike()
+        {
+            IEnumerable<DataRow> isLikeProducts = from product in ProductTable.table.AsEnumerable()
+                                                  where product.Field<bool>("IsLike") == true
+                                                  select product;
+            foreach (DataRow row in isLikeProducts)
+            {
+                Console.WriteLine((ProductReview)row);
+            }
+        }
 
     }
 }

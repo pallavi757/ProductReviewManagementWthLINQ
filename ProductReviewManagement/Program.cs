@@ -66,8 +66,10 @@ namespace ProductReviewManagement
             // objManagement.ProductIdAndReviewUsingMethodSyntax(productReviewList);
             Console.WriteLine("UC8-Create Data Table:\n");
             ProductTable obj = new ProductTable();
-            obj.CreateDataTable(productReviewList);
-            ProductTable.ShowTable();
+           obj.CreateDataTable(productReviewList);
+          //  ProductTable.ShowTable();
+            Console.WriteLine("UC9-Retrieves the records from DataTable with true isLike:\n");
+            objManagement.RetrieveRecordsFromDataTableWithIsLike();
         }
     }
 }

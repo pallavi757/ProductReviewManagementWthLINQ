@@ -10,7 +10,7 @@ namespace ProductReviewManagement
     public class ProductTable
     {
         // Create a new DataTable.     
-        private static  DataTable table = new DataTable("productDataTable");
+        public static DataTable table = new DataTable("productDataTable");
         public void CreateDataTable(List<ProductReview> products)
         {
             DataColumn[] columns = { new DataColumn { ColumnName  = "ProductId",DataType = typeof(int)},
@@ -22,7 +22,7 @@ namespace ProductReviewManagement
             table.Columns.AddRange(columns);
             foreach (var product in products)
             {
-                table.Rows.Add(new object[] { product.ProductID, product.UserID, product.Rating, product.Review, product.isLike });
+             table.Rows.Add(new object[] { product.ProductID, product.UserID, product.Rating, product.Review, product.isLike });
             }
         }
         //Shows the table.
