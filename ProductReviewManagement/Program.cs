@@ -69,9 +69,11 @@ namespace ProductReviewManagement
            obj.CreateDataTable(productReviewList);
           //  ProductTable.ShowTable();
             Console.WriteLine("UC9-Retrieves the records from DataTable with true isLike:\n");
-            Management.RetrieveRecordsFromDataTableWithIsLike();
+           // Management.RetrieveRecordsFromDataTableWithIsLike();
             Console.WriteLine("UC10-find average rating of each product:\n");
-            Management.GetAvgRatings();
+          //  Management.GetAvgRatings();
+            Console.WriteLine("UC11-Get the product with nice reviw:\n");
+            objManagement.GetProductsWithNiceReview();
         }
     }
 }

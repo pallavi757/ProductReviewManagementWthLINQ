@@ -116,6 +116,17 @@ namespace ProductReviewManagement
                 Console.WriteLine(ratings);
             }
         }
+        //UC11
+        public void GetProductsWithNiceReview()
+        {
+            var avgRatings = from product in ProductTable.table.AsEnumerable()
+                             where product.Field<string>("Review").ToLower() == "nice"
+                             select product;
+            foreach (var ratings in avgRatings)
+            {
+                Console.WriteLine((ProductReview)ratings);
+            }
+        }
 
     }
 }
