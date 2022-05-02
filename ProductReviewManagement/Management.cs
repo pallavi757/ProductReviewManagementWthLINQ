@@ -105,6 +105,17 @@ namespace ProductReviewManagement
                 Console.WriteLine((ProductReview)row);
             }
         }
+        //UC10
+        public static void GetAvgRatings()
+        {
+            var avgRatings = from product in ProductTable.table.AsEnumerable()
+                             group product by product.Field<int>("ProductId") into productGrp
+                             select new { productId = productGrp.Key, average = Math.Round(productGrp.Average(x => x.Field<int>("Rating")), 2) };
+            foreach (var ratings in avgRatings)
+            {
+                Console.WriteLine(ratings);
+            }
+        }
 
     }
 }
