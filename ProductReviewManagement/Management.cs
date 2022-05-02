@@ -95,7 +95,7 @@ namespace ProductReviewManagement
             }
         }
         //UC9
-        public  void RetrieveRecordsFromDataTableWithIsLike()
+        public static void RetrieveRecordsFromDataTableWithIsLike()
         {
             IEnumerable<DataRow> isLikeProducts = from product in ProductTable.table.AsEnumerable()
                                                   where product.Field<bool>("IsLike") == true

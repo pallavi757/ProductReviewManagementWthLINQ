@@ -69,7 +69,7 @@ namespace ProductReviewManagement
            obj.CreateDataTable(productReviewList);
           //  ProductTable.ShowTable();
             Console.WriteLine("UC9-Retrieves the records from DataTable with true isLike:\n");
-            objManagement.RetrieveRecordsFromDataTableWithIsLike();
+            Management.RetrieveRecordsFromDataTableWithIsLike();
         }
     }
 }
